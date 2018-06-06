@@ -21,4 +21,27 @@ fun main(args: Array<String>?) {
     headerFont.bold = true
     val headerCellStyle = workbook.createCellStyle()
     headerCellStyle.setFont(headerFont)
+
+    val headerRow = sheet.createRow(0)
+    COLUMNS.indices.forEach { index ->
+        val cell =headerRow.createCell(index)
+        cell.setCellValue(COLUMNS[index])
+        cell.cellStyle = headerCellStyle
+    }
+
+    val releaseDateStyle = workbook.createCellStyle()
+    releaseDateStyle.setDataFormat(create.createDataFormat().getFormat("yyyy-MM-dd"))
+
+    var rows = 1
+    books.forEach{ book ->
+        val row = sheet.createRow(rows++)
+        row.createCell(0).setCellValue(book.id.toString())
+        row.createCell(1).setCellValue(book.author)
+        row.createCell(2).setCellValue(book.name)
+        val releaseDateRow = row.createCell(3)
+        releaseDateRow.cellStyle = releaseDateStyle
+        releaseDateRow.setCellValue(book.id.toString())
+        row.createCell(4).setCellValue(book.numerOfPages.toString())
+        row.createCell(5).setCellValue(book.description)
+    }
 }
