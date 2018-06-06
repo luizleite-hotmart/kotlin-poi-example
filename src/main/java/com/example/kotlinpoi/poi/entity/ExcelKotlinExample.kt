@@ -5,7 +5,7 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.util.*
 
-private val COLUMNS = arrayOf<String>( "Id", "Author", "Release Date", "Number of Pages", "Description")
+private val COLUMNS = arrayOf<String>( "Id", "Author", "Name", "Release Date", "Number of Pages", "Description")
 private val books = Arrays.asList(
         Book(2518L, "Will Shake", "Rom e Ju", Date(-2197741789000), 254, "Any coincidence is just a coincidence"),
         Book(58412L, "Paul rabbit", "Alu", Date(1320981011000), 10, "Brief what is the book"),
@@ -41,7 +41,7 @@ fun main(args: Array<String>?) {
         row.createCell(2).setCellValue(book.name)
         val releaseDateRow = row.createCell(3)
         releaseDateRow.cellStyle = releaseDateStyle
-        releaseDateRow.setCellValue(book.id.toString())
+        releaseDateRow.setCellValue(book.releaseDate)
         row.createCell(4).setCellValue(book.numerOfPages.toString())
         row.createCell(5).setCellValue(book.description)
     }
