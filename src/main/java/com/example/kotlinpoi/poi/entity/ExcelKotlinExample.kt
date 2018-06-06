@@ -1,6 +1,7 @@
 package com.example.kotlinpoi.poi.entity
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import java.io.FileOutputStream
 import java.io.IOException
 import java.util.*
 
@@ -44,4 +45,9 @@ fun main(args: Array<String>?) {
         row.createCell(4).setCellValue(book.numerOfPages.toString())
         row.createCell(5).setCellValue(book.description)
     }
+
+    val file = FileOutputStream("books.xlsx")
+    workbook.write(file)
+    file.close()
+    workbook.close()
 }
