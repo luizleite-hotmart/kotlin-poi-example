@@ -20,5 +20,5 @@ fun main(args: Array<String>?) {
     val headerFont = workbook.createFont()
     headerFont.bold = true
     val headerCellStyle = workbook.createCellStyle()
-
+    headerCellStyle.setFont(headerFont)
 }
