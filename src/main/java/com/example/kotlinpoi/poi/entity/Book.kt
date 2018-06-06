@@ -2,7 +2,7 @@ package com.example.kotlinpoi.poi.entity
 
 import java.util.Date
 
-class Books {
+class Book {
     var id: Long? = null
     var author: String? = null
     var name: String? = null
