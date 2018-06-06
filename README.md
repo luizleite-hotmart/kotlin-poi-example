@@ -1,2 +1,3 @@
-# kotlin-poi-example
-this project is an example for use poi in Kotlin
+# Kotlin using poi example 
+
+This project is made to be an example about how to you can use Apache POI in Kotlin language
